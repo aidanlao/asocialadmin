@@ -22,10 +22,13 @@ export default () => {
     return (
 
         <>
-            <div className="rewards">
-                <h1>
+          <h1 className="rewardheader">
                     Rewards
                 </h1>
+        <div className="reward-page">
+
+        <div className="rewards">
+              
                 <div className="add-reward">
                     <h2 style={{ marginBottom: 1 + 'em' }}>
                         Add a reward
@@ -143,6 +146,7 @@ export default () => {
                 </div>
             </div>
             <RewardList />
+        </div>
         </>
     )
 }
