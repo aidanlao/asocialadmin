@@ -33,6 +33,16 @@ a {
   transition: 0.4s;
  
 }
+.navigation .logobox {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.logobox p {
+  color: white;
+  font-size: 0.8em;
+  opacity: 0.8;
+}
 .navigation .logo {
   color: white;
   font-family: "Barlow", sans-serif;

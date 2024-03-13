@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAddReward } from "../../hooks/rewards"
+import RewardList from "./rewardlist";
 export default () => {
     const { addReward, isLoading } = useAddReward();
     const [inputs, setInputs] = useState({});
@@ -141,6 +142,7 @@ export default () => {
                     </form>
                 </div>
             </div>
+            <RewardList />
         </>
     )
 }

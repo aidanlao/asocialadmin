@@ -18,7 +18,10 @@ export default function Layout() {
         <>
         <div className="navigation">
             <Link className="link" to="/protected/rewards">Rewards</Link>
-            <h1 className="logo">Asocial. Admin</h1>
+            <div className="logobox">
+            <h1 className="logo">aSocial</h1>
+            <p>B2B Rewards Manager</p>
+            </div>
             <Link to="/protected" className="link">Home</Link>
         </div>
         <div>

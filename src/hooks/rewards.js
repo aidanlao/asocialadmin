@@ -63,20 +63,20 @@ import {
             setLoading(true);
             const ref =  collection(db, "rewards");
             
-            const collectionSnap = await getDoc(ref);
-            setRewards(collectionSnap.data());
+            const collectionSnap = await getDocs(ref);
+            collectionSnap.forEach((doc) => {
+                console.log(`${doc.data().rewardCode}`);
+           
+              });
+              setRewards(collectionSnap);
             setLoading(false);
         }
         if (!userLoading) {
           if (user) {
-            
-        console.log(userLoading);
-              console.log("got the user now, it's " + user.username);
-              fetchData();
+             fetchData();
           }
           else {
             
-        console.log(userLoading);
               console.log("You are not logged in");
               setLoading(false);} // Not signed in
         }
