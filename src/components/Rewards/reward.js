@@ -3,7 +3,7 @@ import { useCollapse } from 'react-collapsed';
 export default function Reward(
     { 
         businessDescription, 
-        businesID, 
+        businessID, 
         rewardAddress, 
         rewardCategory, 
         rewardCode, 
@@ -21,12 +21,23 @@ export default function Reward(
         <div className="reward">
             <img src={rewardImage}></img>
             <h2>{rewardCompany}</h2>
-            <p>{businessDescription}</p>
-            <p className="rewardCode">{rewardCode}</p>
+            <h3>{rewardDescription}</h3>
+            
             <button className="collapseButton"{...getToggleProps()}>
                 {isExpanded ? 'Collapse' : 'Expand'}
             </button>
-            <div {...getCollapseProps()}>Collapsed Content</div>
+            <div className="collapsible" {...getCollapseProps()}>
+            <p>{businessDescription}</p>
+            <p>businessID: {businessID}</p>
+            <p>Category: {rewardCategory}</p>
+            <p>Cost: {rewardCost}</p>
+            <p>Expiry: {rewardExpiryDuration}</p>
+            <p>Address: {rewardAddress}</p>
+            
+            <p>
+                Code:  <span className="rewardCode">{rewardCode}</span>
+        </p>
+            </div>
         </div>
     )
 }

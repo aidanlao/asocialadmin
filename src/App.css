@@ -119,6 +119,7 @@ flex-wrap: wrap;
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
+  justify-content: center;
 }
 .reward {
   background-color: white;
@@ -127,13 +128,14 @@ flex-wrap: wrap;
   border-radius: 1em;
  padding: 1em;
  width: 15em;
- padding-bottom: 2em;
+ padding-bottom: 3em;
   display: flex;
   flex-direction: column;
   gap: 1em;
+  height: fit-content;
 }
 .reward * {
-  color: rgb(63, 63, 63);
+  color: rgb(81, 79, 79);
 }
 .reward img {
   object-fit: cover;
@@ -158,9 +160,14 @@ flex-wrap: wrap;
   background: none;
   transition: 0.5s;
   position: absolute;
-  bottom: 1em;
+  bottom: 1.5em;
 }
 .collapseButton:hover {
   color: grey;
   cursor: pointer;
+}
+.reward .collapsible {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
 }
