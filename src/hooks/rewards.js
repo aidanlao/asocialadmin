@@ -68,7 +68,7 @@ import {
                 console.log(`${doc.data().rewardCode}`);
            
               });
-              setRewards(collectionSnap);
+            setRewards(collectionSnap.docs);
             setLoading(false);
         }
         if (!userLoading) {
