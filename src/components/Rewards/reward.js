@@ -33,7 +33,7 @@ export default function Reward(
             <p>Cost: {rewardCost}</p>
             <p>Expiry: {rewardExpiryDuration}</p>
             <p>Address: {rewardAddress}</p>
-            
+            <p>Lat Lon: {rewardLat}, {rewardLon}</p>
             <p>
                 Code:  <span className="rewardCode">{rewardCode}</span>
         </p>

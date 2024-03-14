@@ -140,6 +140,26 @@ export default () => {
                             onChange={handleChange}
                         />
                       </div>
+                      <div>
+                        
+                        <label>Reward Lat:</label>
+                          <input
+                              type="text"
+                              name="rewardLat"
+                              value={inputs.rewardLat}
+                              onChange={handleChange}
+                          />
+                        </div>
+                        <div>
+                        
+                        <label>Reward Lon:</label>
+                          <input
+                              type="text"
+                              name="rewardImage"
+                              value={inputs.rewardLon}
+                              onChange={handleChange}
+                          />
+                        </div>
 
                         <input className="submitButton" type="submit" value="Add rewards" />
                     </form>
