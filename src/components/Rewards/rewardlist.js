@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useRewards } from "../../hooks/rewards"
 import Reward from "./reward";
 import { useEffect } from "react";
-export default function RewardList() {
-    const { rewards, isLoading } = useRewards();
+export default function RewardList({ setCurrentReward, businessid }) {
+    console.log(businessid);
+    const { rewards, isLoading } = useRewards(businessid);
     let listItems;
     if (!isLoading) {
         listItems =  rewards?.map((reward)=>{

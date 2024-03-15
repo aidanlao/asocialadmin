@@ -3,6 +3,7 @@ import Login from "../components/Login";
 import Layout from "../components/Layout";
 import Home from "../components/Home";
 import Rewards from "../components/Rewards";
+import Dashboard from "../components/dashboard";
 export const ROOT = "/";
 export const PROTECTED ="/protected";
 export const REWARDS = "/protected/rewards";
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
         children: [
           {
             path: PROTECTED,
-            element: <Home />,
+            element: <Dashboard />,
           },
           {
             path: REWARDS,
