@@ -158,6 +158,8 @@ flex-wrap: wrap;
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+  padding: 1em;
   gap: 0.5em;
   border-right: 1px solid black;
   
@@ -178,7 +180,7 @@ flex-wrap: wrap;
 .rewardList {
   width: 100%;
   display: flex;
-  padding: 1.5em;
+  padding: 0em;
   flex-wrap: wrap;
   gap: 1em;
   justify-content: start;
@@ -187,6 +189,7 @@ flex-wrap: wrap;
   
   padding: 1em 0em;
   font-size: 0.75em;
+  padding-bottom: 3em;
 }
 .reward {
   background-color: white;
@@ -226,7 +229,7 @@ transform: translateY(-2px) translateZ(0px);
 }
 .reward h3 {
   font-size: 1em;
-  padding-right: 2em;
+  padding-right: 2.5em;
   font-weight: 400;
 }
 .rewardCode {
@@ -275,6 +278,7 @@ transform: translateY(-2px) translateZ(0px);
   display: flex;
   flex-direction: column;
   gap: 0.8em;
+  
 }
 .reward-page {
   display: flex;
@@ -295,9 +299,14 @@ transform: translateY(-2px) translateZ(0px);
     width: 100%;
     padding: 0.75em;
   }
+  .editOffer .editRewardFormFields > div, .editOffer .editRewardFormFields > div > input  {
+    width: 100%;
+  }
   
   .editOffer .editRewardFormFields {
     flex-direction: column;
+    width: 100%;
+    
   }
   .reward-page {
     

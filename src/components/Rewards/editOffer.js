@@ -55,7 +55,7 @@ export default function EditReward({ businessID, currentReward, triggerUpdate, s
                         <div>
                         <label>Reward Expiry Duration:</label>
                         <input
-                            type="text"
+                            type="number"
                             name="rewardExpiryDuration"
                             value={inputs.rewardExpiryDuration}
                             onChange={handleChange}
