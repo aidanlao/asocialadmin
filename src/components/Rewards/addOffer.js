@@ -135,7 +135,7 @@ export default function AddReward({ triggerUpdate, businessID }) {
                         <label>Reward Lon:</label>
                           <input
                               type="text"
-                              name="rewardImage"
+                              name="rewardLon"
                               value={inputs.rewardLon}
                               onChange={handleChange}
                           />

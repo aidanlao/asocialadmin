@@ -74,7 +74,7 @@ import {
         rewardLon
     }
      */
-    async function editReward(reward, onCompletion) {
+    async function editReward(reward, triggerUpdate, onCompletion) {
         setLoading(true);
 
         console.log(reward);
@@ -87,7 +87,7 @@ import {
             onCompletion(error);
             setLoading(false);
         } finally {
-            
+            triggerUpdate({});
             setLoading(false);
         }
     }

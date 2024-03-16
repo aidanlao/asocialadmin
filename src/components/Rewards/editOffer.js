@@ -1,6 +1,6 @@
 import { useEditReward } from "../../hooks/rewards";
 import { useEffect, useState } from "react";
-export default function EditReward({ businessID, currentReward, setEditMode }) {
+export default function EditReward({ businessID, currentReward, triggerUpdate, setEditMode }) {
     const { editReward, isLoading } = useEditReward();
     const [inputs, setInputs] = useState(currentReward);
     
@@ -18,7 +18,7 @@ export default function EditReward({ businessID, currentReward, setEditMode }) {
         const data = new FormData(event.target);
         let formObject = Object.fromEntries(data.entries());
 
-        editReward({businessID: businessID, ...formObject}, onCompletion);
+        editReward({businessID: businessID, ...formObject}, triggerUpdate, onCompletion);
     }
     useEffect(()=> {
         console.log("this");

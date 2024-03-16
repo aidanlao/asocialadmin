@@ -57,7 +57,7 @@ export default function Dashboard() {
                                                     editMode ? (
                                                         <><div className="editOfferWrapper">
                                                             <h1>Edit Offer Details</h1>
-                                                            <EditReward setEditMode={setEditMode} businessID={currentBusiness.businessID}currentReward={currentReward} />
+                                                            <EditReward triggerUpdate={triggerUpdate}setEditMode={setEditMode} businessID={currentBusiness.businessID}currentReward={currentReward} />
                                                         </div></>
                                                     ) : (
                                                         <div className="editOfferWrapper"> <h1>Add Reward</h1>
