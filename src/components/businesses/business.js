@@ -1,9 +1,10 @@
-export default function Business({ setCurrentBusiness, id, ...businessDetails  }) {
+export default function Business({ setCurrentBusiness, ...businessDetails  }) {
 
     const { businessName } = businessDetails;
+    const { id } = businessDetails;
     return (
         <>
-            <div onClick={() => {setCurrentBusiness(id)}} className="business">
+            <div onClick={() => {setCurrentBusiness({businessID: id, name: businessName})}} className="business">
                 <h1>{businessName}</h1>
             </div>
         </>

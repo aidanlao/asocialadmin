@@ -34,11 +34,12 @@ import {
         rewardLon
     }
      */
-    async function addReward(reward) {
+    async function addReward(reward, triggerUpdate) {
         setLoading(true);
 
         console.log(reward);
         try {
+          // note there will be an error if the reward code is empty.
             await setDoc(doc(db, "rewards", reward.rewardCode), reward)
         } catch (error) {
             console.log("Error: " + error);
@@ -46,6 +47,7 @@ import {
         } finally {
             console.log("done adding the reward");
             setLoading(false);
+            triggerUpdate({});
         }
     }
 
@@ -53,7 +55,47 @@ import {
 
   }
 
-  export function useRewards(businessid) {
+  export function useEditReward() {
+    const [isAdding, setLoading] = useState(false);
+    
+    /**
+     * { 
+        businessDescription, 
+        businesID, 
+        rewardAddress, 
+        rewardCategory, 
+        rewardCode, 
+        rewardCompany, 
+        rewardCost, 
+        rewardDescription, 
+        rewardExpiryDuration, 
+        rewardImage, 
+        rewardLat, 
+        rewardLon
+    }
+     */
+    async function editReward(reward, onCompletion) {
+        setLoading(true);
+
+        console.log(reward);
+        try {
+    
+            await updateDoc(doc(db, "rewards", reward.rewardCode), reward);
+            onCompletion("Sucessfully edited the reward");
+        } catch (error) {
+            console.log("Error: " + error);
+            onCompletion(error);
+            setLoading(false);
+        } finally {
+            
+            setLoading(false);
+        }
+    }
+
+    return { editReward, isAdding }
+
+  }
+  export function useRewards(businessid, updateFlag) {
     console.log('useRewards, ' + businessid);
     const [isLoading, setLoading] = useState(false);
     const [rewards, setRewards] = useState();
@@ -68,6 +110,7 @@ import {
             //     console.log(`${doc.data().rewardCode}`);
            
             //   });
+            console.log(collectionSnap.docs);
             setRewards(collectionSnap.docs);
             setLoading(false);
         }
@@ -80,7 +123,7 @@ import {
               console.log("You are not logged in");
               setLoading(false);} // Not signed in
         }
-    }, [userLoading, businessid]);
+    }, [userLoading, businessid, updateFlag]);
 
   
     return { rewards, isLoading };
