@@ -470,7 +470,8 @@ why flex basis doesn't work is cause when
   padding: 1em;
   height: 3em;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
- border: none;
+ 
+  border: 1px solid rgba(128, 128, 128, 0.201);
 }
 .addReward {
   background-color: transparent;
