@@ -40,7 +40,7 @@ export default function EditReward({ businessID, currentReward, triggerUpdate, s
             <form id="editRewardForm" className="editRewardForm" onSubmit={handleSubmit}>
             <div className="editRewardFormFields">
             <div className="fullWidth">
-            <label>Offer Title</label>
+            <label>Business Description</label>
             <input
                 type="text"
                 name="businessDescription"
@@ -157,7 +157,7 @@ export default function EditReward({ businessID, currentReward, triggerUpdate, s
                         </div>
             </div>
            
-<div className="buttonGroup"> <input className="submitButton" type="submit" value="Edit Reward" />
+<div className="buttonGroup"> <input className="submitButton" type="submit" value="Save Changes" />
                         <button className="" onClick={()=>{setEditMode(false)}}>Cancel Edit</button></div>
                        
             </form>
