@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 * {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   padding: 0;
-  color: darkblue;
+  font-weight: 400;
+  color: rgb(43, 43, 43);
   
   box-sizing: border-box;
 }
@@ -13,45 +15,67 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 .navigation {
+  background-color: white;
   display: flex;
+  padding: 2em 1em;
+  color: black;
+  column-gap: 5em;
   width: 100%;
-  justify-content: center;
-  background-color: rgb(21, 50, 106);
+  row-gap: 1em;
   flex-wrap: wrap;
-  gap: 2em;
-  text-align: center;
   align-items: center;
-  padding: 1em 0;
-}
-.navigation .link {
-  font-weight: 300;
-  color: white;
-  padding: 0.2em 1em;
-  border-radius: 0.3em;
-  text-align: center;
-  border: 1px solid transparent;
-  transition: 0.4s;
- 
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
 }
 .navigation .logobox {
   display: flex;
+  align-items: center;
+  font-size: 1em;
+  gap: 0.2em;
+  color: black;
   flex-direction: column;
-  color: white;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
 }
-.logobox p {
-  color: white;
+.navigation .logobox p {
   font-size: 0.8em;
-  opacity: 0.8;
+  font-weight: 400;
+  color: black;
 }
-.navigation .logo {
-  color: white;
+.navigation h1 {
   font-family: "Barlow", sans-serif;
-  font-weight: 900;
+  font-weight: 1000;
+  color: black;
+  line-height: 1.2;
+  font-size: 1.5em;
 }
-.navigation .link:hover {
-  border: 1px solid white;
+.navLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 4em;
+  font-size: 0.9em;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
 }
+.navLinks a {
+  display: block;
+  transition: 0.5s;
+  border-bottom: 1px solid black;
+  backface-visibility: hidden;
+}
+.navLinks a:hover {
+  transform: translateZ(0) translateY(-2px);
+  color: rgb(8, 23, 132);
+  
+  border-bottom: 1px solid rgb(33, 114, 214);
+}
+
 /*Home*/
 .home {
   display: flex;
@@ -59,13 +83,13 @@ a {
   padding: 2em;
 }
 /*Rewards*/
-.rewards {
+.rewardsSection {
   display: flex;
-  justify-content: center;
-  gap: 3em;
+  justify-content: start;
+  gap: 1em;
   flex-direction: column;
-  align-items: center;
-  width: 50%;
+  align-items: start;
+  width: 100%;
    
 }
 .rewardform {
@@ -118,26 +142,77 @@ flex-wrap: wrap;
   max-width: 40em;
   text-align: center;
 }
-.rewardList {
-  width: 50%;
+.rewardsSectionContent {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: flex;
+  width: 100%;
+  border-radius: 1em;
+}
+.dashboardWrapper .rewardListWrapper h1 {
+  font-size: 1.2em;
+  text-align: center;
+  padding-top: 0.5em;
+}
+.dashboardWrapper .rewardListWrapper {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 1em;
+  gap: 0.5em;
+  border-right: 1px solid black;
+  
+}
+@media (max-width: 900px) {
+  .dashboard .rewardListWrapper {
+    border-right: none;
+    width: 100%;
+  }
+  
+  .dashboard .editOfferWrapper {
+    width: 100%;
+  }
+  .rewardsSectionContent {
+    flex-direction: column;
+  }
+}
+.rewardList {
+  width: 100%;
+  display: flex;
+  padding: 0em;
   flex-wrap: wrap;
   gap: 1em;
   justify-content: start;
+}
+.rewardList .rewardContent .collapsibleContent {
+  
+  padding: 1em 0em;
+  font-size: 0.75em;
+  padding-bottom: 3em;
 }
 .reward {
   background-color: white;
   position: relative;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border-radius: 1em;
- padding: 1em;
- max-width: 15em;
+  padding: 0.75em;
  width: 100%;
- padding-bottom: 3em;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  height: fit-content;
+  transition: 0.5s;
+  backface-visibility: hidden;
+  transform: translateZ(0px);
+}
+.reward:hover {
+transform: translateY(-2px) translateZ(0px);
+
+}
+.rewardContent {
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  height: fit-content;
 }
 .reward * {
   color: rgb(81, 79, 79);
@@ -145,11 +220,17 @@ flex-wrap: wrap;
 .reward img {
   object-fit: cover;
   width: 100%;
-  height: 6em;
+  height: 4em;
   border-radius: 1em;
 }
 .reward h2 {
+  font-size: 1em;
   color: rgb(27, 27, 133);
+}
+.reward h3 {
+  font-size: 1em;
+  padding-right: 2.5em;
+  font-weight: 400;
 }
 .rewardCode {
   border: 1px solid black;
@@ -158,23 +239,46 @@ flex-wrap: wrap;
   border-radius: 0.5em;
 
 }
+.collapseButton:hover {
+  transform: scale(1.1);
+  color: grey;
+  cursor: pointer;
+}
 .collapseButton {
   border: none;
   width: fit-content;
   align-self: end;
   background: none;
   transition: 0.5s;
+  right: 0.5em;
   position: absolute;
-  bottom: 1.5em;
+  bottom: 0.5em;
+  font-size: 1.2em;
+  font-weight: bold;
 }
-.collapseButton:hover {
+.viewButton:hover {
+  transform: scale(1.1);
   color: grey;
   cursor: pointer;
 }
-.reward .collapsible {
+.viewButton {
+  border: none;
+  width: fit-content;
+  align-self: end;
+  background: none;
+  transition: 0.2s;
+  backface-visibility: hidden;
+  right: 2em;
+  position: absolute;
+  bottom: 0.8em;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.reward .collapsibleContent {
   display: flex;
   flex-direction: column;
   gap: 0.8em;
+  
 }
 .reward-page {
   display: flex;
@@ -193,6 +297,16 @@ flex-wrap: wrap;
   .rewardList {
     align-items: center;
     width: 100%;
+    padding: 0.75em;
+  }
+  .editOffer .editRewardFormFields > div, .editOffer .editRewardFormFields > div > input  {
+    width: 100%;
+  }
+  
+  .editOffer .editRewardFormFields {
+    flex-direction: column;
+    width: 100%;
+    
   }
   .reward-page {
     
@@ -202,7 +316,210 @@ flex-wrap: wrap;
     width: 100%;
     max-width: 100%;
   }
-  .rewards{
+  .rewardsSection{
     width: 100%;
+  }
+  
+}
+
+
+.dashboardWrapper {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.dashboardWrapper h1 {
+  font-size: 2em;
+  font-weight: 800;
+  font-family: "Barlow", sans-serif;
+}
+.dashboard {
+  width: 100%;
+  min-height: 40em;
+  /* border: 1px solid rgba(128, 128, 128, 0.481); */
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 1em;
+}
+.dashboard > div {
+padding: 1em;
+
+}
+.dashboard > div > h2 {
+  font-weight: 800;
+  font-family: "Barlow", sans-serif;
+
+}
+/*the reason 
+why flex basis doesn't work is cause when
+ flex-direction is column, 
+ flex-basis controls height.*/
+.dashboard > .businessSection {
+  border-right: 1px solid black;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+@media (max-width: 600px) {
+  .dashboard {
+    flex-direction: column;
+  }
+  .dashboard > .businessSection {
+    width: 100%;
+    border-right: none;
+  }
+  .dashboard .businessList {
+    width: 100%;
+  }
+  
+}
+
+.rewardList {
+  display: flex;
+  gap: 0.5em;
+  flex-direction: column;
+}
+.businessList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-size: 1em;
+}
+.business {
+  
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+ border-radius: 1em;
+
+  padding: 1em;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: 0.5s;
+}
+.business:hover {
+  cursor: pointer;
+  transform: translateZ(0) translateY(-2px);
+}
+.business h1 {
+  font-size: 1em;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+
+/*EditReward Component*/
+.editOfferWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 1.5em;
+  min-width: 50%;
+  gap: 1em;
+  width: 70%;
+}
+.editOfferWrapper h1 {
+  font-size: 1.2em;
+}
+.editOffer {
+  width: 100%;
+}
+.editOffer .editRewardForm {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2em;
+}
+.editOffer .submitButton {
+  background-color: transparent;
+  padding: 0.8em 1em 1em 1em;
+  text-align: center;
+  font-size: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.143);
+  vertical-align: center;
+  transition: 0.2s;
+}
+.editOffer .submitButton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.editOffer .editRewardFormFields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.editOffer .fullWidth {
+  width: 100%;
+}
+.editOffer .fullWidth input {
+  width: 100%;
+  height: 4em;
+}
+.editOffer .editRewardFormFields > div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.2em;
+}
+.editRewardForm input {
+  border-radius: 0.8em;
+  padding: 1em;
+  height: 3em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+ border: none;
+}
+.addReward {
+  background-color: transparent;
+  padding: 0.5em 1em 0.5em 1em;
+  text-align: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+border: none;
+  font-size: 1em;
+  backface-visibility: hidden;
+  border-radius: 1em;
+  vertical-align: center;
+  transition: 0.2s;
+}
+.addReward:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.editRewardForm .buttonGroup {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+.editOffer .buttonGroup > * {
+  background-color: transparent;
+  padding: 0.8em 1em 1em 1em;
+  text-align: center;
+  font-size: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.143);
+  vertical-align: center;
+  transition: 0.2s;
+  border-radius: 0.8em;
+  padding: 1em;
+  height: 3em;
+  backface-visibility: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+}
+.editOffer .buttonGroup > *:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.dissapear {
+  animation: dissapear 5s both 2s;
+  color: rgb(71, 177, 71);
+}
+@keyframes dissapear {
+  from {
+    opacity: 1;
+    display: block;
+  }
+  to {
+    opacity: 0;
+    display: none;
   }
 }

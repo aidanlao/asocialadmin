@@ -1,7 +1,11 @@
 import { useCollapse } from 'react-collapsed';
 
 export default function Reward(
-    { 
+    {   setCurrentReward, setEditMode,
+        ...rewardDetails
+    }
+) {
+    const {
         businessDescription, 
         businessID, 
         rewardAddress, 
@@ -14,19 +18,26 @@ export default function Reward(
         rewardImage, 
         rewardLat, 
         rewardLon
-    }
-) {
+    } = rewardDetails;
     const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
     return (
         <div className="reward">
-            <img src={rewardImage}></img>
-            <h2>{rewardCompany}</h2>
+            
             <h3>{rewardDescription}</h3>
             
             <button className="collapseButton"{...getToggleProps()}>
-                {isExpanded ? 'Collapse' : 'Expand'}
+                {isExpanded ? '-' : '+'}
             </button>
+            <button onClick={()=> {
+                setEditMode(true); setCurrentReward(rewardDetails)}}className="viewButton">
+            <i className="fa-regular fa-eye"></i>
+            </button>
+            <div className="rewardContent">
+            {/* <h2>{rewardCompany}</h2> */}
+            
             <div className="collapsible" {...getCollapseProps()}>
+            <div className="collapsibleContent">
+            <img src={rewardImage}></img>
             <p>{businessDescription}</p>
             <p>businessID: {businessID}</p>
             <p>Category: {rewardCategory}</p>
@@ -37,6 +48,10 @@ export default function Reward(
             <p>
                 Code:  <span className="rewardCode">{rewardCode}</span>
         </p>
+            </div>
+           
+            </div>
+           
             </div>
         </div>
     )

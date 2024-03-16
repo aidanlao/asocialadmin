@@ -17,11 +17,12 @@ export default function Layout() {
     return (
         <>
         <div className="navigation">
-            <Link className="link" to="/protected/rewards">Rewards</Link>
-            <div className="logobox">
+        <div className="logobox">
             <h1 className="logo">aSocial</h1>
             <p>B2B Rewards Manager</p>
             </div>
+            <Link className="link" to="/protected/rewards">Rewards</Link>
+           
             <Link to="/protected" className="link">Home</Link>
         </div>
         <div>
