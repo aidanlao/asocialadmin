@@ -19,6 +19,7 @@ export default function Dashboard() {
         // console.log("current business");
         // console.log(currentBusiness.businessID);
         setCurrentReward(null);
+        setEditMode(false);
     }, [currentBusiness?.businessID]);
     useEffect(() => {
         //setRewardToAnalyze(analytics?.rewards[currentReward?.rewardCode]);

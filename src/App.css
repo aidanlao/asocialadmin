@@ -176,6 +176,9 @@ flex-wrap: wrap;
   .rewardsSectionContent {
     flex-direction: column;
   }
+  body .dashboardWrapper {
+    padding: 1em;
+  }
 }
 .rewardList {
   width: 100%;
@@ -324,7 +327,7 @@ transform: translateY(-2px) translateZ(0px);
 
 
 .dashboardWrapper {
-  padding: 1em;
+  padding: 3em;
   display: flex;
   flex-direction: column;
   gap: 1em;
