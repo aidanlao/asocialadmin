@@ -6,6 +6,13 @@ export default function EditReward({ businessID, currentReward, triggerUpdate, s
     
     function onCompletion(message) {
         console.log("complete " + message);
+        var p = document.createElement("p");
+        p.className = "dissapear";
+        document.getElementById("message")?.remove();
+        p.id = "message";
+        p.innerHTML = message;
+        document.getElementById("editRewardForm").appendChild(p);
+        triggerUpdate({});
     }
     const handleChange = (event) => {
         const name = event.target.name;
@@ -18,7 +25,7 @@ export default function EditReward({ businessID, currentReward, triggerUpdate, s
         const data = new FormData(event.target);
         let formObject = Object.fromEntries(data.entries());
 
-        editReward({businessID: businessID, ...formObject}, triggerUpdate, onCompletion);
+        editReward({businessID: businessID, ...formObject}, onCompletion);
     }
     useEffect(()=> {
         console.log("this");
@@ -30,7 +37,7 @@ export default function EditReward({ businessID, currentReward, triggerUpdate, s
         
         <div className="editOffer">
            
-            <form className="editRewardForm" onSubmit={handleSubmit}>
+            <form id="editRewardForm" className="editRewardForm" onSubmit={handleSubmit}>
             <div className="editRewardFormFields">
             <div className="fullWidth">
             <label>Offer Title</label>

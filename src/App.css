@@ -509,3 +509,17 @@ border: none;
   transform: scale(1.05);
   cursor: pointer;
 }
+.dissapear {
+  animation: dissapear 5s both 2s;
+  color: rgb(71, 177, 71);
+}
+@keyframes dissapear {
+  from {
+    opacity: 1;
+    display: block;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}

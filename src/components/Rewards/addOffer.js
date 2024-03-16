@@ -9,12 +9,22 @@ export default function AddReward({ triggerUpdate, businessID }) {
         setInputs(values => ({ ...values, [name]: value }))
         console.log(event.target.value);
     }
+    function onCompletion(message) {
+        console.log("complete " + message);
+        var p = document.createElement("p");
+        p.className = "dissapear";
+        document.getElementById("message")?.remove();
+        p.id = "message";
+        p.innerHTML = message;
+        document.getElementById("addRewardForm").appendChild(p);
+        triggerUpdate({});
+    }
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.target);
         let formObject = Object.fromEntries(data.entries());
 
-        addReward({businessID: businessID, ...formObject}, triggerUpdate);
+        addReward({businessID: businessID, ...formObject}, onCompletion);
     }
 
     return (
@@ -22,7 +32,7 @@ export default function AddReward({ triggerUpdate, businessID }) {
         
         <div className="editOffer">
            
-            <form className="editRewardForm" onSubmit={handleSubmit}>
+            <form id="addRewardForm" className="editRewardForm" onSubmit={handleSubmit}>
             <div className="editRewardFormFields">
             <div className="fullWidth">
             <label>Offer Title</label>

@@ -34,20 +34,23 @@ import {
         rewardLon
     }
      */
-    async function addReward(reward, triggerUpdate) {
+    async function addReward(reward, onCompletion) {
         setLoading(true);
 
         console.log(reward);
+        var message;
         try {
           // note there will be an error if the reward code is empty.
             await setDoc(doc(db, "rewards", reward.rewardCode), reward)
+            message = "Successfully added the reward";
         } catch (error) {
             console.log("Error: " + error);
+            message = error;
             setLoading(false);
         } finally {
             console.log("done adding the reward");
             setLoading(false);
-            triggerUpdate({});
+            onCompletion(message);
         }
     }
 
@@ -74,20 +77,22 @@ import {
         rewardLon
     }
      */
-    async function editReward(reward, triggerUpdate, onCompletion) {
+    async function editReward(reward, onCompletion) {
         setLoading(true);
 
         console.log(reward);
+        var message;
         try {
     
             await updateDoc(doc(db, "rewards", reward.rewardCode), reward);
-            onCompletion("Sucessfully edited the reward");
+            message = "Successfully edited the reward";
         } catch (error) {
             console.log("Error: " + error);
-            onCompletion(error);
+            
+            message = error;
             setLoading(false);
         } finally {
-            triggerUpdate({});
+            onCompletion(message);
             setLoading(false);
         }
     }
