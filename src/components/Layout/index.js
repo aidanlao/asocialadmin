@@ -21,8 +21,6 @@ export default function Layout() {
             <h1 className="logo">aSocial</h1>
             <p>B2B Rewards Manager</p>
             </div>
-            <Link className="link" to="/protected/rewards">Rewards</Link>
-           
             <Link to="/protected" className="link">Home</Link>
         </div>
         <div>
