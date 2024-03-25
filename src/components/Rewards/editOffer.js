@@ -24,7 +24,11 @@ export default function EditReward({ businessID, currentReward, triggerUpdate, s
         event.preventDefault();
         const data = new FormData(event.target);
         let formObject = Object.fromEntries(data.entries());
-
+        formObject.rewardCost = parseInt(formObject.rewardCost);
+        formObject.rewardExpiryDuration = parseInt(formObject.rewardExpiryDuration);
+        formObject.rewardLat = parseInt(formObject.rewardLat);
+        formObject.rewardLon = parseInt(formObject.rewardLon);
+        
         editReward({businessID: businessID, ...formObject}, onCompletion);
     }
     useEffect(()=> {

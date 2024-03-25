@@ -27,6 +27,7 @@ export default function AddReward({ triggerUpdate, businessID }) {
         formObject.rewardExpiryDuration = parseInt(formObject.rewardExpiryDuration);
         formObject.rewardLat = parseInt(formObject.rewardLat);
         formObject.rewardLon = parseInt(formObject.rewardLon);
+        
         addReward({businessID: businessID, ...formObject}, onCompletion);
     }
 
