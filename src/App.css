@@ -527,3 +527,50 @@ border: none;
     display: none;
   }
 }
+
+.loginForm {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+.loginForm form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.255);
+  padding: 2em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 1em;
+  gap: 0.5em;
+}
+.loginForm h1 {
+  padding: 1em 0em;
+}
+.loginForm input {
+  padding: 0.5em 1em;
+  border-radius: 0.8em;
+  border: 1px solid grey;
+}
+.loginForm form button {
+  margin: 1em 0em;
+  padding: 0.5em 1em;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.253);
+  border-radius: 0.8em;
+  color: white;
+  background: #420171;
+  transition: 1s;
+}
+.loginForm form button:hover {
+  background: #7d38af;
+  cursor: pointer;
+}
+.selected {
+  -webkit-box-shadow: 0px 0px 20px -10px rgba(66,1,113,1);
+  -moz-box-shadow: 0px 0px 20px -10px rgba(66,1,113,1);
+  box-shadow: 0px 0px 20px -10px rgba(66,1,113,1);
+  outline: 1px solid rgba(66, 1, 113, 0.306);
+}

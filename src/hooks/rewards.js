@@ -101,7 +101,6 @@ import {
 
   }
   export function useRewards(businessid, updateFlag) {
-    console.log('useRewards, ' + businessid);
     const [isLoading, setLoading] = useState(false);
     const [rewards, setRewards] = useState();
     const { user, isLoading: userLoading, error } = useAuth();

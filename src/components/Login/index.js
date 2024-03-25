@@ -21,7 +21,7 @@
   
     return (
       <div w="100%" h="100vh">
-        <div mx="1" maxW="md" p="9" borderWidth="1px" borderRadius="lg">
+        <div className="loginForm">
           <h1>
             Log In
           </h1>

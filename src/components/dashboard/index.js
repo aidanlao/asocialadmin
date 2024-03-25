@@ -40,7 +40,7 @@ export default function Dashboard() {
                             <div className="dashboard">
                                 <div className="businessSection">
                                     <h2>Businesses</h2>
-                                    <BusinessList setCurrentBusiness={setCurrentBusiness} />
+                                    <BusinessList currentBusiness={currentBusiness} setCurrentBusiness={setCurrentBusiness} />
                                 </div>
                                 <div className="rewardsSection">
                                     {currentBusiness ? (
