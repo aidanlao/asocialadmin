@@ -20,10 +20,6 @@ export const router = createBrowserRouter([
             path: PROTECTED,
             element: <Dashboard />,
           },
-          {
-            path: REWARDS,
-            element: <Rewards />,
-          },
         ],
       },
 ]);
