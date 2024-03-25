@@ -39,11 +39,11 @@ export default function AddReward({ triggerUpdate, businessID }) {
             <form id="addRewardForm" className="editRewardForm" onSubmit={handleSubmit}>
             <div className="editRewardFormFields">
             <div className="fullWidth">
-            <label>Offer Title</label>
+            <label>Offer Title (rewardDescription field)</label>
             <input
                 type="text"
-                name="businessDescription"
-                value={inputs.businessDescription}
+                name="rewardDescription"
+                value={inputs.rewardDescription}
                 onChange={handleChange}
             />
             </div>
@@ -70,11 +70,11 @@ export default function AddReward({ triggerUpdate, businessID }) {
 
                         <div>
                        
-                        <label>Reward Description:</label>
+                        <label>Reward Description (businessDescription field):</label>
                         <input
                             type="text"
-                            name="rewardDescription"
-                            value={inputs.rewardDescription}
+                            name="businessDescription"
+                            value={inputs.businessDescription}
                             onChange={handleChange}
                         />     
                         </div>

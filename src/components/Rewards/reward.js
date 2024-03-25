@@ -1,7 +1,7 @@
 import { useCollapse } from 'react-collapsed';
 
 export default function Reward(
-    {   setCurrentReward, setEditMode,
+    {   selected, setCurrentReward, setEditMode,
         ...rewardDetails
     }
 ) {
@@ -21,7 +21,7 @@ export default function Reward(
     } = rewardDetails;
     const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
     return (
-        <div className="reward">
+        <div className={"reward " + `${selected}`}>
             
             <h3>{rewardDescription}</h3>
             

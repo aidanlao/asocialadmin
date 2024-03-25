@@ -51,8 +51,8 @@ export default function Dashboard() {
                                                 <div className="rewardListWrapper">
                                                     <h1>Rewards</h1>
                         
-                                                    {editMode ? (<button className="addReward" onClick={()=> { setEditMode(false)}}>Add Reward +</button>) : (<p>Click the eye icon to edit a reward.</p>)}
-                                                    <RewardList setEditMode={setEditMode}updateFlag={updateFlag}setCurrentReward={setCurrentReward} businessid={currentBusiness.businessID} />
+                                                    {editMode ? (<button className="addReward" onClick={()=> { setEditMode(false); setCurrentReward(null);}}>Add Reward +</button>) : (<p>Click the eye icon to edit a reward.</p>)}
+                                                    <RewardList currentReward={currentReward}setEditMode={setEditMode}updateFlag={updateFlag}setCurrentReward={setCurrentReward} businessid={currentBusiness.businessID} />
 
                                                 </div>
                                                 {
