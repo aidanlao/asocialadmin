@@ -23,7 +23,7 @@ export default function Register() {
         <div w="100%" h="100vh">
           <div className="loginForm">
             <h1>
-              Log In
+              Register
             </h1>
     
             <form onSubmit={handleSubmit(handleRegister)}>
