@@ -11,7 +11,7 @@ export default function BusinessList({ currentBusiness, setCurrentBusiness }) {
         listItems =  businesses?.map((business)=>{
             const data = business.data();
             var selected = "";
-            business.id == currentBusiness.businessID ? selected = "selected" : selected = "";
+            business.id == currentBusiness?.businessID ? selected = "selected" : selected = "";
             return (
                 <Business selected={selected} id={business.id} key={business.id} setCurrentBusiness={setCurrentBusiness} {...data}></Business>
           );})

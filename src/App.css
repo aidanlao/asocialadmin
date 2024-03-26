@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 body {
-  
+  background-color: #f6f6f6;
 }
 a {
   text-decoration: none;
@@ -147,6 +147,7 @@ flex-wrap: wrap;
 }
 .rewardsSectionContent {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid rgba(104, 104, 104, 0.253);
   display: flex;
   width: 100%;
   border-radius: 0.5em;;
@@ -269,12 +270,12 @@ transform: translateY(-2px) translateZ(0px);
   font-size: 1.2em;
   font-weight: bold;
 }
-.viewButton:hover {
+.viewButton:hover, .trashButton:hover {
   transform: scale(1.1);
   color: grey;
   cursor: pointer;
 }
-.viewButton {
+.viewButton, .trashButton {
   border: none;
   width: fit-content;
   align-self: end;
@@ -286,6 +287,9 @@ transform: translateY(-2px) translateZ(0px);
   bottom: 0.8em;
   font-size: 0.9em;
   font-weight: bold;
+}
+.trashButton {
+  right: 3.7em;
 }
 .reward .collapsibleContent {
   display: flex;
@@ -348,9 +352,9 @@ transform: translateY(-2px) translateZ(0px);
   font-family: "Montserrat", sans-serif;
 }
 .dashboard {
+  background-color: white;
   width: 100%;
   min-height: 40em;
-  /* border: 1px solid rgba(128, 128, 128, 0.481); */
   display: flex;
   border: 1px solid rgba(104, 104, 104, 0.253);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -581,4 +585,54 @@ border: none;
   -moz-box-shadow: 0px 0px 20px -10px rgba(66,1,113,1);
   box-shadow: 0px 0px 20px -10px rgba(66,1,113,1);
   outline: 1px solid rgba(66, 1, 113, 0.306);
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.deleteModalWrapper {
+  position: fixed;
+  z-index: 3000;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(148, 148, 148, 0.463);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+.deleteModal {
+background-color: white;
+max-width: 80%;
+border-radius: 1em;
+border: 1px solid rgba(128, 128, 128, 0.272);
+
+padding: 2em 1em;
+}
+.deleteModal .buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  padding: 1em;
+}
+.deleteModal button {
+  background-color: rgb(81, 81, 81);
+  border: none;
+  color: white;
+  border-radius: 1em;
+  padding: 1em 2em;
+  transition: 0.3s;
+}
+.deleteModal button:hover {
+  cursor: pointer;
+  background-color: rgb(67, 1, 67);
+}
+.d-none {
+  display: none !important;
 }

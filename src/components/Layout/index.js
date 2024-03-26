@@ -12,7 +12,11 @@ export default function Layout() {
         }
       }, [user, isLoading]);
     
-    if (isLoading) return "Loading auth user...";
+    if (isLoading) return (<div className="loading">
+    
+        <p>Loading authentication...</p>
+    
+    </div>);
 
     return (
         <>

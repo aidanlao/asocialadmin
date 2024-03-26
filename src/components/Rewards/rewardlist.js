@@ -22,7 +22,10 @@ const RewardListMemo = memo(function RewardList({ currentReward, setEditMode, up
     if (isLoading) {
         return (<p style={{padding: 1+"em"}}>Loading...</p>)
     } else {
-        return (<div className="rewardList">{listItems}</div>)
+        return (<>
+        <div className="rewardList">{listItems}</div>
+        </>
+        )
     }
 
 });

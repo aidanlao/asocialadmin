@@ -13,7 +13,7 @@ export default function Dashboard() {
     //const { analytics, isLoading } = useAnalytics();
     const [updateFlag, triggerUpdate ] = useState(0);
     const [editMode, setEditMode] = useState(false);
-    const [currentBusiness, setCurrentBusiness] = useState({ businessID: "businessID002", name: "Cinnaholic" });
+    const [currentBusiness, setCurrentBusiness] = useState();
     //const [rewardToAnalyze, setRewardToAnalyze] = useState();
     useEffect(() => {
         // console.log("current business");
@@ -72,7 +72,7 @@ export default function Dashboard() {
                                         </>
 
                                     ) : (
-                                        <p>Choose a business</p>
+                                        <p>Select a business to view and edit its rewards.</p>
                                     )
 
                                     }

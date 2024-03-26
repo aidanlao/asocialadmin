@@ -1,5 +1,6 @@
 import { useCollapse } from 'react-collapsed';
-
+import { useState } from 'react';
+import DeleteModal from './deleteModal';
 export default function Reward(
     {   selected, setCurrentReward, setEditMode,
         ...rewardDetails
@@ -20,11 +21,18 @@ export default function Reward(
         rewardLon
     } = rewardDetails;
     const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
+    const [deleteConfirmation, setDeleteConfirmation] = useState({ modalOpen: false, deleted: false});
+    const display = deleteConfirmation.deleted ? "d-none" : "";
     return (
-        <div className={"reward " + `${selected}`}>
+        <>
+                <div className={"reward " + `${selected} ${display}`}>
             
             <h3>{rewardDescription}</h3>
             
+            <button className="trashButton"onClick={()=> { setDeleteConfirmation({modalOpen: true, deleted: false})}}>
+
+                <i  className="fa-solid fa-trash"></i>
+            </button>
             <button className="collapseButton"{...getToggleProps()}>
                 {isExpanded ? '-' : '+'}
             </button>
@@ -54,5 +62,7 @@ export default function Reward(
            
             </div>
         </div>
+        {deleteConfirmation.modalOpen && <DeleteModal setDeleteConfirmation={setDeleteConfirmation} {...rewardDetails} />}
+        </>
     )
 }

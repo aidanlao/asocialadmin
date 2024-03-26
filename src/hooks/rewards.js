@@ -57,6 +57,21 @@ import {
     return { addReward, isAdding }
 
   }
+  export async function deleteReward(reward, onCompletion) {
+
+        var message;
+        try {
+          // note there will be an error if the reward code is empty.
+            await deleteDoc(doc(db, "rewards", reward.rewardCode), reward)
+            message = "Successfully deleted the reward";
+        } catch (error) {
+            console.log("Error: " + error);
+            message = error;
+        } finally {
+            console.log("done deleting the reward");
+            onCompletion(message);
+        }
+  }
 
   export function useEditReward() {
     const [isAdding, setLoading] = useState(false);
