@@ -2,13 +2,13 @@ import { Outlet, Link } from "react-router-dom";
 import { useAuth } from "../../hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { LOGIN } from "../../lib/routes";
+import { LOGIN, NOTAPPROVED } from "../../lib/routes";
 export default function Layout() {
     const { user, isLoading } = useAuth();
     const navigate = useNavigate();
     useEffect(() => {
-        if (!isLoading && !user) {
-          navigate(LOGIN);
+        if (!isLoading && user.approved == "false") {
+          navigate(NOTAPPROVED);
         }
       }, [user, isLoading]);
     
@@ -26,6 +26,7 @@ export default function Layout() {
             <p>B2B Rewards Manager</p>
             </div>
             <Link to="/protected" className="link">Home</Link>
+            <Link to="/protected/users" className="link">Manage Users</Link>
         </div>
         <div>
             <Outlet/>

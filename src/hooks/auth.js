@@ -81,10 +81,11 @@ import {
           console.log(auth);
           const res = await createUserWithEmailAndPassword(auth, email, password);
           console.log(res);
-          await setDoc(doc(db, "dashboardusers", res.user.uid), {
+          await setDoc(doc(db, "admin", res.user.uid), {
             id: res.user.uid,
-            username: username.toLowerCase(),
-            avatar: "",
+            approved: false,
+            email: email,
+            username: username,
             date: Date.now(),
           });
   

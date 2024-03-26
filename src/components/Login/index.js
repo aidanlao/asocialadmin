@@ -1,9 +1,10 @@
 
-  import {  PROTECTED } from "../../lib/routes";
-  import { Link as RouterLink } from "react-router-dom";
+  import {  PROTECTED, REGISTER } from "../../lib/routes";
+  import { Link as RouterLink, useNavigate } from "react-router-dom";
   import { useLogin } from "../../hooks/auth";
   import { useForm } from "react-hook-form";
   export default function Login() {
+    const navigate = useNavigate();
     const { login, isLoading } = useLogin();
     const {
       register,
@@ -44,8 +45,12 @@
             >
               Log In
             </button>
+            <button onClick={()=> { navigate(REGISTER)}}
+            >
+              Register for new account
+            </button>
           </form>
-  
+        
         </div>
       </div>
     );
