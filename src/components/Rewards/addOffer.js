@@ -25,8 +25,8 @@ export default function AddReward({ triggerUpdate, businessID }) {
         let formObject = Object.fromEntries(data.entries());
         formObject.rewardCost = parseInt(formObject.rewardCost);
         formObject.rewardExpiryDuration = parseInt(formObject.rewardExpiryDuration);
-        formObject.rewardLat = parseInt(formObject.rewardLat);
-        formObject.rewardLon = parseInt(formObject.rewardLon);
+        formObject.rewardLat = parseFloat(formObject.rewardLat);
+        formObject.rewardLon = parseFloat(formObject.rewardLon);
         
         addReward({businessID: businessID, ...formObject}, onCompletion);
     }
