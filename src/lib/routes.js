@@ -7,6 +7,8 @@ import Dashboard from "../components/dashboard";
 import Register from "../components/Login/register";
 import AdminManager from "../components/users";
 import NotApproved from "../components/users/notapproved";
+import BusinessManager from "../components/Businesses/businesses";
+export const BUSINESSMANAGER = "/protected/businesses"
 export const ROOT = "/";
 export const PROTECTED ="/protected";
 export const REWARDS = "/protected/rewards";
@@ -18,6 +20,7 @@ export const router = createBrowserRouter([
   { path: REGISTER, element: <Register />},
   { path: ROOT, element: <Login />},
   { path: NOTAPPROVED, element: <NotApproved />},
+  { path: BusinessManager, element: <BusinessManager />},
   { path: LOGIN, element: <Login /> },
     {
       
