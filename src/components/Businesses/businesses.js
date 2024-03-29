@@ -5,7 +5,18 @@ export default function BusinessManager() {
     const [currentBusiness, setCurrentBusiness] = useState({});
     return (
         <>
-            <BusinessList currentBusiness={currentBusiness} setCurrentBusiness={setCurrentBusiness} />
+            <div className="businessWrapper">
+                <div className="businessCard dynamicmd card flex">
+                    <div className="businessSection w30md">
+                        <h1>Businesses</h1>
+                        <BusinessList currentBusiness={currentBusiness} setCurrentBusiness={setCurrentBusiness} />
+
+                    </div>
+                    <div className="editSection w70md">
+
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
