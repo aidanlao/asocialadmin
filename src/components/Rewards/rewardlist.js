@@ -13,8 +13,7 @@ const RewardListMemo = memo(function RewardList({ currentReward, setEditMode, up
             const data = reward.data();
             var selected = "";
             data.rewardCode == currentReward?.rewardCode ? selected = "selected" : selected = "";
-            console.log(data.rewardCode + " |" + currentReward?.rewardCode);
-            return (
+              return (
                 <Reward selected={selected}setEditMode={setEditMode}setCurrentReward={setCurrentReward} key={data.rewardCode}{...data}></Reward>
           );})
     }

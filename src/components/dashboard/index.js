@@ -26,9 +26,6 @@ export default function Dashboard() {
         //console.log(analytics?.rewards.get(currentReward));
     }, [currentReward]);
 
-    useEffect(()=> {
-        console.log(updateFlag);
-    },[updateFlag]);
 
     return (
         <>

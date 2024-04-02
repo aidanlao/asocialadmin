@@ -32,7 +32,6 @@ export default function EditReward({ businessID, currentReward, triggerUpdate, s
         editReward({businessID: businessID, ...formObject}, onCompletion);
     }
     useEffect(()=> {
-        console.log("this");
         setInputs(currentReward);
     },[currentReward]);
     
