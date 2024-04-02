@@ -726,3 +726,8 @@ input.readonly {
 .businessCard {
   width: 100%;
 }
+.businessSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
