@@ -719,6 +719,10 @@ padding: 2em 1em;
   cursor: pointer;
   background-color: rgb(202, 202, 202);
 }
+
+input.readonly {
+  opacity: 0.5;  
+}
 .businessCard {
   width: 100%;
 }

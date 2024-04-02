@@ -26,9 +26,6 @@ export default function Dashboard() {
         //console.log(analytics?.rewards.get(currentReward));
     }, [currentReward]);
 
-    useEffect(()=> {
-        console.log(updateFlag);
-    },[updateFlag]);
 
     return (
         <>
@@ -51,7 +48,7 @@ export default function Dashboard() {
                                                 <div className="rewardListWrapper">
                                                     <h1>Rewards</h1>
                         
-                                                    {editMode ? (<button className="addReward" onClick={()=> { setEditMode(false); setCurrentReward(null);}}>Add Reward +</button>) : (<p>Click the eye icon to edit a reward.</p>)}
+                                                    {editMode ? (<button className="addReward" onClick={()=> { setEditMode(false); setCurrentReward(null);}}>Add Reward +</button>) : (<p>Click the pencil icon to edit a reward.</p>)}
                                                     <RewardList currentReward={currentReward}setEditMode={setEditMode}updateFlag={updateFlag}setCurrentReward={setCurrentReward} businessid={currentBusiness.businessID} />
 
                                                 </div>

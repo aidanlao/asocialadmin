@@ -7,7 +7,10 @@ export default function Layout() {
     const { user, isLoading } = useAuth();
     const navigate = useNavigate();
     useEffect(() => {
-        if (!isLoading && user.approved == "false") {
+        if (!isLoading && !user) {
+            navigate(LOGIN);
+        }
+        if (!isLoading && user?.approved == "false") {
           navigate(NOTAPPROVED);
         }
       }, [user, isLoading]);

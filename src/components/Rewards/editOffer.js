@@ -32,7 +32,6 @@ export default function EditReward({ businessID, currentReward, triggerUpdate, s
         editReward({businessID: businessID, ...formObject}, onCompletion);
     }
     useEffect(()=> {
-        console.log("this");
         setInputs(currentReward);
     },[currentReward]);
     
@@ -109,11 +108,12 @@ export default function EditReward({ businessID, currentReward, triggerUpdate, s
                            
                         <label>Reward Code:</label>
                         <input
+                        className="readonly"
                             type="text"
                             name="rewardCode"
                             value={inputs.rewardCode}
                             onChange={handleChange}
-                        />  
+                        readonly="true" />  
                         </div>
                         
                        

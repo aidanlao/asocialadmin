@@ -38,7 +38,7 @@ export default function Reward(
             </button>
             <button onClick={()=> {
                 setEditMode(true); setCurrentReward(rewardDetails)}}className="viewButton">
-            <i className="fa-regular fa-eye"></i>
+            <i className="fa-solid fa-pencil"></i>
             </button>
             <div className="rewardContent">
             {/* <h2>{rewardCompany}</h2> */}
