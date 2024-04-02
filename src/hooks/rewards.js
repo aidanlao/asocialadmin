@@ -40,10 +40,15 @@ import {
         console.log(reward);
         var message;
         try {
-            const businessrewardsref = doc(db, "business", reward.businessID);
+            const businessRewardRef = doc(db, "business", reward.businessID);
+            await updateDoc(businessRewardRef, {
+                [`rewards.${reward.rewardCode}`]: {
+                    purchased: 0,
+                    redeemed: 0
+                }
+            });
           // note there will be an error if the reward code is empty.
-            await setDoc(doc(db, "rewards", reward.rewardCode), reward)
-            await setDoc(doc(db,))
+            await setDoc(doc(db, "rewards", reward.rewardCode), reward);
             message = "Successfully added the reward";
         } catch (error) {
             console.log("Error: " + error);
