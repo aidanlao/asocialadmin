@@ -48,7 +48,7 @@ export default function AddBusiness() {
                     value={inputs.businessID} 
                     onChange={handleChange} />
                 </div>
-                <input value="Add Business" type="submit" class="submitButton" />
+                <input value="Add Business" type="submit" className="submitButton" />
             </form>
         </div>
 </>
