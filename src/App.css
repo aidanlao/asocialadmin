@@ -36,6 +36,9 @@ a {
   body .w30md, body .w70md {
     width: 100%;
   }
+  .pymd {
+    padding: 1em 0;
+  }
 }
 .w30md {
   width: 30%;
@@ -135,7 +138,7 @@ flex-wrap: wrap;
   padding: 0.8em 2em;
   transition: 0.5s;
 }
-.rewardform .submitButton:hover {
+.rewardform .submitButton:hover, r {
   
   background-color: rgb(3, 3, 85);
   cursor: pointer;
@@ -473,7 +476,7 @@ why flex basis doesn't work is cause when
   align-items: start;
   gap: 2em;
 }
-.editOffer .submitButton {
+.editOffer .submitButton, .businessCard .submitButton {
   background-color: transparent;
   padding: 0.8em 1em 1em 1em;
   text-align: center;
@@ -482,7 +485,7 @@ why flex basis doesn't work is cause when
   vertical-align: center;
   transition: 0.2s;
 }
-.editOffer .submitButton:hover {
+.editOffer .submitButton:hover, .businessCard .submitButton:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
@@ -725,4 +728,65 @@ input.readonly {
 }
 .businessCard {
   width: 100%;
+}
+.businessSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 3em;
+}
+@media (max-width: 900px) {
+  body .cardWrapper {
+    padding: 1em;
+  }
+}
+@media (max-width: 768px) {
+  .businessSection {
+    padding-bottom: 1em;
+  }
+}
+.businessForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.businessForm form {
+  padding: 1em;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid rgba(104, 104, 104, 0.253);
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1em;
+  justify-content: start;
+}
+.businessForm form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  align-items: start;
+  justify-content: center;
+
+}
+.businessForm .submitButton {
+  border-radius: 0.5em;
+}
+
+.businessForm input {
+  border-radius: 0.8em;
+  padding: 1em;
+  height: 3em;
+  border: 1px solid rgba(104, 104, 104, 0.253);
+}
+.businessCard {
+  padding: 0;
+}
+.businessCard > div {
+  padding: 1em;
 }
