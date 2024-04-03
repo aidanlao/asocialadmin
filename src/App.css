@@ -18,7 +18,32 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
+/* utility start */
+.card {
+  border: 1px solid rgba(104, 104, 104, 0.253);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0.5em;
+  background-color: white;
+  padding: 1em;
+}
+.flex {
+  display: flex;
+}
+@media(max-width: 768px) {
+  body .dynamicmd {
+    flex-direction: column;
+  }
+  body .w30md, body .w70md {
+    width: 100%;
+  }
+}
+.w30md {
+  width: 30%;
+}
+.w70md {
+  width: 70%;
+}
+/* utility end */
 .navigation {
   background-color: white;
   display: flex;
@@ -358,7 +383,7 @@ transform: translateY(-2px) translateZ(0px);
   display: flex;
   border: 1px solid rgba(104, 104, 104, 0.253);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 0.5em;;
+  border-radius: 0.5em;
 }
 .dashboard > div {
 padding: 3em;
@@ -697,4 +722,7 @@ padding: 2em 1em;
 
 input.readonly {
   opacity: 0.5;  
+}
+.businessCard {
+  width: 100%;
 }
